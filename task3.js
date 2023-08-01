@@ -1,11 +1,8 @@
-function getDoubleFunction(argOne) {
-    let result;
-    if (typeof argOne === "number" && !isNaN(argOne)) {
-        result = (argTwo) => argOne + argTwo;
-    } else {
-        result = (argTwo) => "Ошибка ввода";
+function sumArg(argOne) {
+    return function(argTwo) {
+        return argOne + argTwo;
     }
-    return result;
 }
-let sumArg = getDoubleFunction(-4)(1);
-console.log(sumArg)
+const sum = sumArg(91)(8);
+console.log(sum);
+sumArg();
